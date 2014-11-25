@@ -1,0 +1,22 @@
+{
+    "name": "magdkudama/",
+    "description": "Twig extension to highlight content",
+    "keywords": ["test", "broadmargins", "php"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Magd Kudama",
+            "email": "magdkudama@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "3.0.*@dev",
+        "twig/twig": "1.16.*@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": { "MagdKudama\\Test\\": "src/MagdKudama/Test" }
+    }
+}
