@@ -14,6 +14,13 @@ $(function() {
     });
 
     function successHandler(params) {
-        alert(params);
+        var source = $("#money-template").html();
+        var template = Handlebars.compile(source);
+
+        var object = {};
+        object['data'] = params;
+
+        $('#modal-body').html(template(object));
+        $('#modal').modal('show');
     }
 });
