@@ -2,7 +2,7 @@
 
 namespace MagdKudama\Test;
 
-use MagdKudama\Test\Currency\PoundSterling as PoundSterlingParser;
+use MagdKudama\Test\Currency\PoundSterling as PoundSterlingCurrency;
 use MagdKudama\Test\Parser\PoundSterling;
 
 class MoneyDividerTest extends \PHPUnit_Framework_TestCase
@@ -11,7 +11,7 @@ class MoneyDividerTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->parser = new PoundSterling(new PoundSterlingParser);
+        $this->parser = new PoundSterling(new PoundSterlingCurrency);
     }
 
     /**
