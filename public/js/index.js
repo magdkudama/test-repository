@@ -8,10 +8,17 @@ $(function() {
                 type: 'POST',
                 url: '/index.php',
                 data: $('form#submit-form').serialize(),
-                success: successHandler
+                success: successHandler,
+                error: errorHandler
             });
         }
     });
+
+    function errorHandler(params) {
+        var data = '<h3>' + params.responseJSON.error + '<h3>';
+        $('#modal-body').html(data);
+        $('#modal').modal('show');
+    }
 
     function successHandler(params) {
         var source = $("#money-template").html();

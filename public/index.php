@@ -14,12 +14,17 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $request = Request::createFromGlobals();
 
 if ($request->isMethod('POST') && $request->isXmlHttpRequest()) {
-    $parser = new PoundSterling(new PoundSterlingCurrency);
-    $moneyDivider = new MoneyDivider($parser);
+    try {
+        $parser = new PoundSterling(new PoundSterlingCurrency);
+        $moneyDivider = new MoneyDivider($parser);
 
-    $result = $moneyDivider->divideFor($request->request->get('amount', ''));
+        $result = $moneyDivider->divideFor($request->request->get('amount', ''));
 
-    $response = new JsonResponse($result);
+        $response = new JsonResponse($result);
+    } catch (\Exception $e) {
+        $response = new JsonResponse(['error' => 'It seems data entered is wrong!'], 400);
+    }
+
     $response->send();
     return;
 }
