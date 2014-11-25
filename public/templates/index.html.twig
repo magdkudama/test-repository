@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Money converter{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/index.css">
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Money converter application!</h1>
+            <p>
+                Welcome, please enter a value and press <code>Enter</code> in your keyboard.
+            </p>
+
+            <form role="form" method="post" id="submit-form">
+                <input type="text" name="amount" class="form-control" id="input-value" placeholder="Enter the value..." />
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/index.js"></script>
+{% endblock %}
